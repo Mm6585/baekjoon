@@ -1,0 +1,9 @@
+values = input()
+a, b = values.split()
+a, b = int(a), int(b)
+if(a > b):
+    print('>')
+elif(a < b):
+    print('<')
+elif(a == b):
+    print('==')
