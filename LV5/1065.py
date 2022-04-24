@@ -4,7 +4,7 @@ def f(x):
     for i in range(len(x)-1):
         a.append(int(x[i+1]) - int(x[i]))
     a = set(a)
-    if (len(a) != 1 and len(a) != 0):
+    if (len(a) > 1):
         return 0
     else:
         return 1
