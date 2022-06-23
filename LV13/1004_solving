@@ -1,0 +1,19 @@
+import sys
+input = sys.stdin.readline
+
+t = int(input())
+
+for _ in range(t):
+	startx, starty, endx, endy = map(int, input().split())
+	d = ((startx-endx)**2 + (starty-endy)**2)**(1/2)
+	
+	n = int(input())
+	cnt = 0
+	for _ in range(n):
+		x, y, r = map(int(input()))
+		sd = ((startx-x)**2 + (starty-y)**2)**(1/2)
+		ed = ((endx-x)**2 + (endy-y)**2)**(1/2)
+		
+		if (sd < r):
+			cnt += 1
+	....
