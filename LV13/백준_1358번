@@ -1,0 +1,17 @@
+import sys
+input = sys.stdin.readline
+ 
+w, h, x, y, p = map(int, input().split())
+r = h / 2
+cnt = 0
+for _ in range(p):
+    px, py = map(int, input().split())
+ 
+    if (px <= x):
+        d = ((px-x)**2 + (py-(y+r))**2)**(1/2)
+    else:
+        d = ((px-(x+w))**2 + (py-(y+r))**2)**(1/2)
+ 
+    if (((x <= px <= x+w) and (y <= py <= y+h)) or (d <= r)):
+        cnt += 1
+print(cnt)
