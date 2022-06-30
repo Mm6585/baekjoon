@@ -1,0 +1,11 @@
+import sys
+input = sys.stdin.readline
+ 
+n = int(input())
+l = list(map(int, input().split()))
+ 
+if (n % 2 == 0):
+    print(max(l) * min(l))
+else:
+    l.sort()
+    print(l[(n-1)//2]**2)
