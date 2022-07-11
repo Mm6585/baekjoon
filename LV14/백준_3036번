@@ -1,0 +1,23 @@
+def gcd(x, y):
+	if (y == 0):
+		return x
+	else:
+		return gcd(y, x%y)
+ 
+def lcm(x, y):
+	return (x * y) // gcd(x, y)
+ 
+n = int(input())
+l = list(map(int, input().split()))
+ 
+for i in l[1:]:
+	a = max(i, l[0])
+	b = min(i, l[0])
+	if (a % b == 0):
+		if (a == l[0]):
+			print(str(a//b)  +'/1')
+		else:
+			print('1/'  +str(a//b))
+	else:
+		m = lcm(b, a)
+		print(str(m//i) + '/' + str(m//l[0]))
