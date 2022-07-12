@@ -13,7 +13,6 @@ def calc_k(k):
 		return k
 	else:
 		return k * calc_k(k-1)
- 
+
 n, k = map(int, input().split())
-k = min(k, n-k)
 print((calc_n(n, k) // calc_k(k)) % 10007)
