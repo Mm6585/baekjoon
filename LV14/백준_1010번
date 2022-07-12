@@ -1,0 +1,24 @@
+import sys
+input = sys.stdin.readline
+ 
+def calc_n(n, k):
+	if (k == 0):
+		return 1
+	elif (k == 1):
+		return n
+	else:
+		return n * calc_n(n-1, k-1)
+ 
+def calc_k(k):
+	if (k == 0):
+		return 1
+	if (k == 1):
+		return k
+	else:
+		return k * calc_k(k-1)
+ 
+t = int(input())
+ 
+for _ in range(t):
+	k, n = map(int, input().split())
+	print(calc_n(n, k) // calc_k(k))
