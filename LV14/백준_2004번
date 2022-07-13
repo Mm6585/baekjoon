@@ -1,0 +1,12 @@
+def count_n(x, n):
+    cnt = 0
+    m = n
+    while(x >= m):
+        cnt += x // m
+        m = m * n
+    return cnt
+ 
+n, k = map(int, input().split())
+t = count_n(n, 2) - count_n(k, 2) - count_n(n-k, 2)
+f = count_n(n, 5) - count_n(k, 5) - count_n(n-k, 5)
+print(min(t, f))
