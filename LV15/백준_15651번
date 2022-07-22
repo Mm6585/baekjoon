@@ -1,5 +1,5 @@
 def back_tracking(start):
-	if (len(l) >= m):
+	if (len(l) == m):
 		print(' '.join(map(str, l)))
 		return
  
