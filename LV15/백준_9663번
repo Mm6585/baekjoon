@@ -1,0 +1,31 @@
+# pypy3 제출
+
+n = int(input())
+
+cnt = 0
+l = [0] * n
+visited = [0] * n
+
+def n_queens(x):
+	global cnt
+	if (x == n):
+		cnt += 1
+		return
+
+	else:
+		for i in range(n):
+			if (visited[i] == 0):
+				l[x] = i
+				check = True
+
+				for j in range(x):
+					if (abs(l[x] - l[j]) == abs(x - j)):
+						check = False
+
+				if (check):
+					visited[i] = 1
+					n_queens(x+1)
+					visited[i] = 0
+
+n_queens(0)
+print(cnt)
