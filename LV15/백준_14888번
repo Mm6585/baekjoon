@@ -1,28 +1,28 @@
 import sys
 input = sys.stdin.readline
- 
+
 n = int(input())
 l = list(map(int, input().split()))
 o = list(map(int, input().split()))
-maximum = 1e-9
+maximum = -1e9
 minimum = 1e9
- 
-def dfs(x, total, plus, minus, multiply, devide):
+
+def dfs(x, result, plus, minus, multiply, devide):
 	global maximum, minimum
- 
+
 	if (x == n):
-		maximum = max(total, maximum)
-		minimum = min(total, minimum)
+		maximum = max(result, maximum)
+		minimum = min(result, minimum)
 		return
 	if (plus):
-		dfs(x+1, total+l[x], plus-1, minus, multiply, devide)
+		dfs(x+1, result+l[x], plus-1, minus, multiply, devide)
 	if (minus):
-		dfs(x+1, total-l[x], plus, minus-1, multiply, devide)
+		dfs(x+1, result-l[x], plus, minus-1, multiply, devide)
 	if (multiply):
-		dfs(x+1, total*l[x], plus, minus, multiply-1, devide)
+		dfs(x+1, result*l[x], plus, minus, multiply-1, devide)
 	if (devide):
-		dfs(x+1, int(total/l[x]), plus, minus, multiply, devide-1)
- 
+		dfs(x+1, int(result/l[x]), plus, minus, multiply, devide-1)
+
 dfs(1, l[0], o[0], o[1], o[2], o[3])
 print(maximum)
 print(minimum)
