@@ -1,0 +1,8 @@
+ans = [1, 1, 2, 2, 2, 8]
+l = list(map(int, input().split()))
+result = [0] * 6
+
+for i in range(6):
+	result[i] = ans[i] - l[i]
+
+print(*result)
