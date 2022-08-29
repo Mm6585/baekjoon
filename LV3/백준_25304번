@@ -1,0 +1,15 @@
+import sys
+input = sys.stdin.readline
+
+total = int(input())
+n = int(input())
+result = 0
+
+for _ in range(n):
+	price, k = map(int, input().split())
+	result += price * k
+
+if (total == result):
+	print('Yes')
+else:
+	print('No')
