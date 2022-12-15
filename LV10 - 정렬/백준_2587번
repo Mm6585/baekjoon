@@ -1,0 +1,10 @@
+import sys
+input = sys.stdin.readline
+
+l = list()
+for _ in range(5):
+	l.append(int(input()))
+l.sort()
+
+print(int(sum(l)/len(l)))
+print(l[len(l)//2])
