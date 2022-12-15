@@ -1,0 +1,11 @@
+import sys
+input = sys.stdin.readline
+
+l = [0] * 30
+for _ in range(28):
+	i = int(input())
+	l[i-1] = 1
+
+f = l.index(0)
+print(f + 1)
+print(l.index(0, f+1) + 1)
