@@ -1,0 +1,22 @@
+import sys
+input = sys.stdin.readline
+
+n, m = 9, 9
+a = [[0]*m for _ in range(n)]
+
+for i in range(n):
+	l = list(map(int, input().split()))
+	for j in range(m):
+		a[i][j] = l[j]
+
+m = a[0][0]
+x, y = 1, 1
+for i in range(n):
+	t = max(a[i])
+	if (t > m):
+		m = t
+		x = i + 1
+		y = a[i].index(t) + 1
+
+print(m)
+print(x, y)
